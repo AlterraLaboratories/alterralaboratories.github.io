@@ -13,17 +13,19 @@
 
         /* Global styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #333; /* Dark background for dark mode */
-            color: #fff; /* Light text color for dark mode */
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; /* Dark background for dark mode */
+            color: #fff;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            background-color: #111; /* Dark header background for dark mode */
+            background-color: #ff6600; /* Orange header background */
             color: #fff;
             text-align: center;
             padding: 20px 0;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         nav ul {
@@ -45,11 +47,23 @@
             text-decoration: none;
             color: #fff;
             font-weight: bold;
+            transition: color 0.3s;
         }
 
-        section {
+        nav a:hover {
+            color: #ff3300; /* Slightly darker orange on hover */
+        }
+
+        .content {
+            background-color: #333; /* Dark section background for dark mode */
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
             padding: 40px;
-            background-color: #222; /* Dark section background for dark mode */
+            text-align: center;
+        }
+
+        h1, h2, p {
             margin-bottom: 20px;
         }
 
@@ -57,13 +71,13 @@
             color: #ff6600; /* Orange header color */
         }
 
-        ul {
-            list-style: disc;
-            margin-left: 20px;
+        iframe {
+            display: block;
+            margin: 0 auto;
         }
 
         footer {
-            background-color: #111; /* Dark footer background for dark mode */
+            background-color: #1a1a1a; /* Dark footer background for dark mode */
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -76,47 +90,44 @@
         <nav>
             <ul>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Our Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
     
-    <section id="about">
+    <div class="content" id="about">
         <h2>About Us</h2>
-        <p>We are a tech company specializing in open-source software development.</p>
-    </section>
+        <p>Alterra Laboratories is a technology company dedicated to open-source software development. We are committed to delivering innovative and reliable software solutions and contributing to the open-source community.</p>
+    </div>
 
-    <section id="services">
+    <div class="content" id="services">
         <h2>Our Services</h2>
-        <ul>
-            <li>Custom Software Development</li>
-            <li>Open-Source Contributions</li>
-            <li>Consulting Services</li>
-        </ul>
-    </section>
+        <p>Open-Source Software Development: We develop open-source software.</p>
+        <p>Open-Source Contributions: We contribute to open-source projects, supporting the global developer community.</p>
+    </div>
 
-    <section id="portfolio">
+    <div class="content" id="portfolio">
         <h2>Portfolio</h2>
-        <!-- Add your project details and images here -->
-    </section>
+        <p>Explore some of our featured projects and collaborations in our portfolio section. Each project represents a testament to our commitment to excellence in software development.</p>
+        <p>Project 1</p>
+        <p>Project 2</p>
+        <p>Project 3</p>
+    </div>
 
-    <section id="contact">
+    <div class="content" id="contact">
         <h2>Contact Us</h2>
-        <p>If you have any questions or inquiries, please email us at <a href="mailto:info@alterralabs.com">info@alterralabs.com</a>.</p>
-    </section>
+        <p>If you have any questions, inquiries, or would like to discuss a potential project, please don't hesitate to reach out to us.</p>
+        <p>Email: AlterraLaboratories@proton.me</p>
+        <p>Discord Server: <a href="https://discord.gg/fz4nJYtcN7">https://discord.gg/fz4nJYtcN7</a></p>
+        <p>We look forward to hearing from you!</p>
+    </div>
+
+    <iframe src="https://discord.com/widget?id=1129833714994642974&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
     <footer>
         <p>&copy; 2023 Alterra Laboratories</p>
     </footer>
-
-    <script>
-        // JavaScript to toggle dark mode
-        const body = document.body;
-        const toggleDarkMode = () => {
-            body.classList.toggle("dark-mode");
-        };
-    </script>
 </body>
 </html>

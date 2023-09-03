@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to Alterra Laboratories</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        /* Reset some default styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            /* Dark background for dark mode */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff6600;
+            /* Orange header background */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, p {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ff6600;
+            /* Orange header color */
+        }
+
+        .crypto-addresses {
+            margin-top: 20px;
+        }
+
+        .crypto-address {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .crypto-label {
+            font-weight: bold;
+        }
+
+        .copy-button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .copy-button:hover {
+            background-color: #ff3300;
+        }
+
+        .warning {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Faster animation for the "Copied!" popup */
+        .popup {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: -50px; /* Start below the viewport */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: block;
+            z-index: 1;
+            transition: bottom 0.3s ease-in-out; /* Faster animation */
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            padding-top: 20px;
+            max-width: 200px;
+            /* Adjust the logo size as needed */
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            /* Dark footer background for dark mode */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Donate to Alterra Laboratories</h1>
+    </header>
+
+    <div class="container">
+        <h2>Support Our Open-Source Initiatives</h2>
+        <p>If you'd like to support our open-source projects and initiatives, you can make a donation in cryptocurrency to
+            help us continue our work and contribute to the software development community.</p>
+
+        <!-- Crypto Addresses -->
+        <div class="crypto-addresses">
+            <div class="crypto-address">
+                <span class="crypto-label">Bitcoin (BTC) Address:</span>
+                <p id="btcAddress">bc1qesj2dzp4p7mnnyf8rhqpa4l82xl49ngepcvkf5</p>
+                <button class="copy-button" onclick="copyToClipboard('btcAddress')">Copy BTC Address</button>
+            </div>
+            <div class="crypto-address">
+                <span class="crypto-label">Ethereum (ETH) Address:</span>
+                <p id="ethAddress">0xd0Af6A651739fbD7BE2309005C8A6566EB3ba913</p>
+                <button class="copy-button" onclick="copyToClipboard('ethAddress')">Copy ETH Address</button>
+            </div>
+            <div class="crypto-address">
+                <span class="crypto-label">DogeCoin (DOGE) Address:</span>
+                <p id="dogeAddress">A6f3NpcRc9VD5qpUGvyyycoRRt8dLpPEeZ</p>
+                <button class="copy-button" onclick="copyToClipboard('dogeAddress')">Copy DOGE Address</button>
+            </div>
+        </div>
+
+        <!-- Warning message -->
+        <div class="warning">
+            Only send the specified currency to these addresses. Any other currency will be lost.
+        </div>
+    </div>
+
+    <!-- Faster animation for the "Copied!" popup -->
+    <div class="popup" id="popup">
+        Copied!
+    </div>
+
+    <footer>
+        <img src="logo.png" alt="Alterra Laboratories Logo" class="logo">
+        <p>&copy; 2023 Alterra Laboratories</p>
+    </footer>
+
+    <!-- JavaScript to scroll to the top of the page on initial load -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.scrollTo(0, 0);
+        });
+
+        function copyToClipboard(id) {
+            text = document.getElementById(id).textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showCopiedMessage();
+        }
+
+        function showCopiedMessage() {
+            var popup = document.getElementById("popup");
+            popup.style.bottom = "20px"; /* Display the popup */
+            setTimeout(function () {
+                popup.style.bottom = "-50px"; /* Hide the popup */
+            }, 2000); // Hide the message after 2 seconds
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterra Laboratories - Open-Source Software Development</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            /* Dark background for dark mode */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            /* Add your background image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #ff6600;
+            /* Orange header background */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff3300;
+            /* Slightly darker orange on hover */
+        }
+
+        .content {
+            background-color: rgba(51, 51, 51, 0.8);
+            /* Semi-transparent dark background for sections */
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 1s ease, blur 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes blur {
+            from {
+                filter: blur(5px);
+            }
+
+            to {
+                filter: blur(0px);
+            }
+        }
+
+        h1,
+        h2,
+        p {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ff6600;
+            /* Orange header color */
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            /* Dark footer background for dark mode */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            padding-top: 20px;
+            max-width: 200px;
+            /* Adjust the logo size as needed */
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+
+        /* Anchor link style for top of the page */
+        #top-link {
+            position: absolute;
+            top: 0;
+        }
+
+        /* Styling for the Employees section */
+        #employees {
+            background-color: rgba(51, 51, 51, 0.8);
+            /* Semi-transparent dark background for Employees section */
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Styling for the Employees section */
+        #employees {
+            background-color: rgba(51, 51, 51, 0.8);
+            /* Semi-transparent dark background for Employees section */
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #employees h2 {
+            color: #ff6600;
+            /* Orange header color */
+        }
+
+        .job-title {
+            color: #888;
+            /* Slightly greyed out color for job titles */
+            font-style: italic;
+            /* Italicize job titles */
+            margin-top: 5px;
+            /* Add some space between employee names and job titles */
+        }
+
+        /* Styling for the Donating section */
+        #donating {
+            background-color: rgba(51, 51, 51, 0.8);
+            /* Semi-transparent dark background for Donating section */
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        #donating h2 {
+            color: #ff6600;
+            /* Orange header color */
+        }
+
+        .donate-button {
+            background-color: #ff6600;
+            /* Orange button background color */
+            color: #fff;
+            /* Button text color */
+            padding: 10px 20px;
+            /* Button padding */
+            border: none;
+            /* Remove button border */
+            border-radius: 5px;
+            /* Button border radius */
+            font-weight: bold;
+            /* Button text weight */
+            text-decoration: none;
+            /* Remove underline on button text */
+            cursor: pointer;
+            /* Cursor style on hover */
+            transition: background-color 0.3s, transform 0.2s;
+            /* Transition effect for background color and transform */
+        }
+
+        .donate-button:hover {
+            background-color: #ff3300;
+            /* Slightly darker orange on hover */
+            transform: scale(1.05);
+            /* Scale up button on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Anchor link for top of the page -->
+    <a id="top-link"></a>
+
+    <header>
+        <h1>Welcome to Alterra Laboratories</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#employees">Employees</a></li>
+                <li><a href="#donating">Donating</a></li> <!-- Link to the Donating section -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="content">
+        <h2>About Us</h2>
+        <p>Alterra Laboratories is a technology company dedicated to open-source software development. We are committed
+            to delivering innovative and reliable software solutions and contributing to the open-source community.</p>
+    </section>
+
+    <section id="services" class="content">
+        <h2>Our Services</h2>
+        <p>Open-Source Software Development: We develop open-source software.</p>
+        <p>Open-Source Contributions: We contribute to open-source projects, supporting the global developer community.
+        </p>
+    </section>
+
+    <section id="portfolio" class="content">
+        <h2>Portfolio</h2>
+        <p>Explore some of our featured projects and collaborations in our portfolio section. Each project represents a
+            testament to our commitment to excellence in software development.</p>
+        <a href="https://github.com/MikoInSpace/Task-Organizer">Task Organizer</a>
+    </section>
+
+    <section id="contact" class="content">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, inquiries, or would like to discuss a potential project, please don't hesitate to
+            reach out to us.</p>
+        <p>Email: AlterraLaboratories@proton.me</p>
+        <p>Discord Server: <a href="https://discord.gg/fz4nJYtcN7">https://discord.gg/fz4nJYtcN7</a></p>
+        <p>We look forward to hearing from you!</p>
+    </section>
+
+    <!-- Employees section -->
+    <section id="employees" class="content">
+        <h2>Our Employees</h2>
+        <!-- Add information about your employees here -->
+        <p><strong>Employee 1:</strong> Miko 'Alterra' Arson</p>
+        <p class="job-title">CEO, Lead Software Engineer</p>
+
+        <p><strong>Employee 2:</strong> Juniper Pop</p>
+        <p class="job-title">Advertising</p>
+
+        <p><strong>Employee 3:</strong> Olivan</p>
+        <p class="job-title">Document Specialist</p>
+    </section>
+
+    <!-- Donating section -->
+    <section id="donating" class="content">
+        <h2>Donating</h2>
+        <p>If you'd like to support our open-source initiatives and projects, consider making a donation. Your
+            contribution helps us continue our work and make the software development community even better.</p>
+        <a href="donating.html" class="donate-button">Donate Now</a>
+    </section>
+
+    <iframe src="https://discord.com/widget?id=1129833714994642974&theme=dark" width="350" height="500"
+        allowtransparency="true" frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+    <footer>
+        <img src="logo.png" alt="Alterra Laboratories Logo" class="logo">
+        <p>&copy; 2023 Alterra Laboratories</p>
+    </footer>
+
+    <!-- JavaScript to scroll to the top of the page on initial load -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+
+</html>

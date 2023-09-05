@@ -27,9 +27,8 @@ We offer a wide range of services tailored to meet the unique needs of our clien
 
 Explore some of our featured projects and collaborations in our portfolio section. Each project represents a testament to our commitment to excellence in software development.
 
-- Project 1
-- Project 2
-- Project 3
+- Task Organizer
+- Money Calculator
 
 ## Contact Us
 
